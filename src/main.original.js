@@ -1,4 +1,4 @@
-import { ProductList } from './constant';
+import { productList } from './constant';
 let sel, addBtn, cartDisp, sum, stockInfo;
 let lastSel,
   bonusPts = 0,
@@ -42,7 +42,7 @@ function main() {
   setTimeout(function () {
     setInterval(function () {
       const luckyItem =
-        ProductList[Math.floor(Math.random() * ProductList.length)];
+        productList[Math.floor(Math.random() * productList.length)];
       if (Math.random() < 0.3 && luckyItem.q > 0) {
         luckyItem.val = Math.round(luckyItem.val * 0.8);
         alert('번개세일! ' + luckyItem.name + '이(가) 20% 할인 중입니다!');
@@ -53,7 +53,7 @@ function main() {
   setTimeout(function () {
     setInterval(function () {
       if (lastSel) {
-        const suggest = ProductList.find(function (item) {
+        const suggest = productList.find(function (item) {
           return item.id !== lastSel && item.q > 0;
         });
         if (suggest) {
@@ -69,7 +69,7 @@ function main() {
 }
 function updateSelOpts() {
   sel.innerHTML = '';
-  ProductList.forEach(function (item) {
+  productList.forEach(function (item) {
     const opt = document.createElement('option');
     opt.value = item.id;
     opt.textContent = item.name + ' - ' + item.val + '원';
@@ -87,9 +87,9 @@ function calcCart() {
   for (let i = 0; i < cartItems.length; i++) {
     (function () {
       let curItem;
-      for (let j = 0; j < ProductList.length; j++) {
-        if (ProductList[j].id === cartItems[i].id) {
-          curItem = ProductList[j];
+      for (let j = 0; j < productList.length; j++) {
+        if (productList[j].id === cartItems[i].id) {
+          curItem = productList[j];
           break;
         }
       }
@@ -156,7 +156,7 @@ const renderBonusPts = () => {
 };
 function updateStockInfo() {
   let infoMsg = '';
-  ProductList.forEach(function (item) {
+  productList.forEach(function (item) {
     if (item.q < 5) {
       infoMsg +=
         item.name +
@@ -170,7 +170,7 @@ function updateStockInfo() {
 main();
 addBtn.addEventListener('click', function () {
   const selItem = sel.value;
-  const itemToAdd = ProductList.find(function (p) {
+  const itemToAdd = productList.find(function (p) {
     return p.id === selItem;
   });
   if (itemToAdd && itemToAdd.q > 0) {
@@ -219,7 +219,7 @@ cartDisp.addEventListener('click', function (event) {
   ) {
     const prodId = tgt.dataset.productId;
     const itemElem = document.getElementById(prodId);
-    const prod = ProductList.find(function (p) {
+    const prod = productList.find(function (p) {
       return p.id === prodId;
     });
     if (tgt.classList.contains('quantity-change')) {
