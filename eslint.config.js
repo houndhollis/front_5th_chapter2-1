@@ -11,6 +11,10 @@ export default defineConfig([
     plugins: { js, import: plugImport },
     extends: ['js/recommended', prettier],
     rules: {
+      curly: ['error', 'all'],
+      'no-var': 'error',
+      'prefer-const': 'error',
+      'no-const-assign': 'warn',
       'import/first': 'error',
       'import/order': [
         'warn',
@@ -30,7 +34,6 @@ export default defineConfig([
           },
         },
       ],
-      curly: ['error', 'all'],
     },
   },
   {
