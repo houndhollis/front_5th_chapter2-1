@@ -9,7 +9,7 @@ export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,jsx}'],
     plugins: { js, import: plugImport },
-    extends: ['js/recommended'],
+    extends: ['js/recommended', prettier],
     rules: {
       'import/first': 'error',
       'import/order': [
@@ -30,6 +30,7 @@ export default defineConfig([
           },
         },
       ],
+      curly: ['error', 'all'],
     },
   },
   {
@@ -37,5 +38,4 @@ export default defineConfig([
     languageOptions: { globals: globals.browser },
   },
   pluginReact.configs.flat.recommended,
-  prettier,
 ]);

@@ -78,7 +78,9 @@ function updateSelOpts() {
     var opt = document.createElement('option');
     opt.value = item.id;
     opt.textContent = item.name + ' - ' + item.val + '원';
-    if (item.q === 0) opt.disabled = true;
+    if (item.q === 0) {
+      opt.disabled = true;
+    }
     sel.appendChild(opt);
   });
 }
@@ -104,11 +106,17 @@ function calcCart() {
       itemCnt += q;
       subTot += itemTot;
       if (q >= 10) {
-        if (curItem.id === 'p1') disc = 0.1;
-        else if (curItem.id === 'p2') disc = 0.15;
-        else if (curItem.id === 'p3') disc = 0.2;
-        else if (curItem.id === 'p4') disc = 0.05;
-        else if (curItem.id === 'p5') disc = 0.25;
+        if (curItem.id === 'p1') {
+          disc = 0.1;
+        } else if (curItem.id === 'p2') {
+          disc = 0.15;
+        } else if (curItem.id === 'p3') {
+          disc = 0.2;
+        } else if (curItem.id === 'p4') {
+          disc = 0.05;
+        } else if (curItem.id === 'p5') {
+          disc = 0.25;
+        }
       }
       totalAmt += itemTot * (1 - disc);
     })();
