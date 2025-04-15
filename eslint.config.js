@@ -16,6 +16,7 @@ export default defineConfig([
       'prefer-const': 'error',
       'no-const-assign': 'warn',
       'import/first': 'error',
+      'no-use-before-define': 'error',
       'import/order': [
         'warn',
         {
