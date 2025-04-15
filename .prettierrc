@@ -4,6 +4,6 @@
   "singleQuote": true,
   "semi": true,
   "useTabs": false,
-  "printWidth": 80,
+  "printWidth": 100,
   "bracketSpacing": true
 }
