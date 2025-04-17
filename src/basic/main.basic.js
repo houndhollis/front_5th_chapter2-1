@@ -1,5 +1,4 @@
 import './utils/alertEvent';
-import { PRODUCT_LIST } from '../constant';
 import {
   Title,
   Select,
@@ -10,6 +9,7 @@ import {
   StockStatus,
   CartDisplay,
 } from './components';
+import { PRODUCT_LIST } from './constant';
 import { updateSelectOption, updateCartSummary } from './utils';
 
 function main() {

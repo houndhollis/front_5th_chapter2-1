@@ -113,7 +113,6 @@ describe('basic test', () => {
       expect(document.getElementById('loyalty-points').textContent).toContain('(포인트: 128)');
     });
     
-
     it('번개세일 기능이 정상적으로 동작하는지 확인', () => {
       // 일부러 랜덤이 가득한 기능을 넣어서 테스트 하기를 어렵게 만들었습니다. 이런 코드는 어떻게 하면 좋을지 한번 고민해보세요!
     });

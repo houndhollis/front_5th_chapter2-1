@@ -1,4 +1,4 @@
-import { PRODUCT_LIST } from '../../constant';
+import { PRODUCT_LIST } from '../constant';
 
 export const updateStockStatus = () => {
   let infoMsg = '';
@@ -7,9 +7,7 @@ export const updateStockStatus = () => {
       infoMsg +=
         item.name +
         ': ' +
-        (item.quantity > 0
-          ? '재고 부족 (' + item.quantity + '개 남음)'
-          : '품절') +
+        (item.quantity > 0 ? '재고 부족 (' + item.quantity + '개 남음)' : '품절') +
         '\n';
     }
   });

@@ -1,7 +1,7 @@
 import { updateBonusPointsDisplay } from './updateBonusPointsDisplay';
 import { updateStockStatus } from './updateStockStatus';
-import { PRODUCT_LIST } from '../../constant';
-import { DISCOUNT_RATE } from '../../constant';
+import { PRODUCT_LIST } from '../constant';
+import { DISCOUNT_RATE } from '../constant';
 
 const getDiscountRate = (itemCnt, totalAmt, subTotal) => {
   let discountRate = 0;
@@ -38,9 +38,7 @@ export const updateCartSummary = () => {
         }
       }
 
-      const q = parseInt(
-        cartItems[i].querySelector('span').textContent.split('x ')[1]
-      );
+      const q = parseInt(cartItems[i].querySelector('span').textContent.split('x ')[1]);
       const itemTot = currentItem.price * q;
       const discount = q >= 10 ? (DISCOUNT_RATE[currentItem.id] ?? 0) : 0;
 
@@ -53,8 +51,7 @@ export const updateCartSummary = () => {
 
   const discountRate = getDiscountRate(itemCnt, totalAmt, subTotal);
 
-  document.getElementById('cart-total').textContent =
-    '총액: ' + Math.round(totalAmt) + '원';
+  document.getElementById('cart-total').textContent = '총액: ' + Math.round(totalAmt) + '원';
   if (discountRate > 0) {
     const span = document.createElement('span');
     span.className = 'text-green-500 ml-2';

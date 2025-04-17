@@ -1,4 +1,4 @@
-import { PRODUCT_LIST } from '../../constant';
+import { PRODUCT_LIST } from '../constant';
 
 export const updateSelectOption = () => {
   const select = document.getElementById('product-select');
